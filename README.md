@@ -1,0 +1,1 @@
+- A simple subdomain monitoring script with a webhook to discord using pd notify. To use the script u need to clone it and create a `root_domains.txt` file that contains the domains u wish to monitor, the file needs to be at the same directory with `mona.py`. U should also explore the configs of notify in order to receive the monitoring updates
