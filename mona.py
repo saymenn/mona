@@ -18,7 +18,7 @@ def monitor(domain):
     domain_path = base_path + "/" + domain + "/" + domain
     if os.path.exists(domain_path):
         try:
-            os.system(f"subfinder -d {domain} -all | anew {domain_path} | httpx -p 80,443,8080,8443,3000,10000,9443 -sc -title -td -location | notify -pc ~/.config/notify/provider-config.yaml -bulk")
+            os.system(f"subfinder -d {domain} -all | anew {domain_path} | /root/go/bin/httpx -timeout 30 -p 80,443,8080,8443,3000,10000,9443 -sc -title -td -location | notify -pc ~/.config/notify/provider-config.yaml -bulk")
         except Exception as err:
             print("[-] ERROR at the monitor func ", err)
             sys.exit(0)
